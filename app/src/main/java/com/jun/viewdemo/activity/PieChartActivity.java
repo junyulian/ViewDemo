@@ -7,11 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.jun.viewdemo.R;
 
-public class PieChartActivity extends AppCompatActivity {
+public class PieChartActivity extends BaseActivity {
+
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pie_chart);
+    public int getViewId() {
+        return R.layout.activity_pie_chart;
     }
 }

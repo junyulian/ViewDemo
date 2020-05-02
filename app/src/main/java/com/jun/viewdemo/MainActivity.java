@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.jun.viewdemo.activity.AvatarActivity;
 import com.jun.viewdemo.activity.DashBoardActivity;
+import com.jun.viewdemo.activity.ImageCrashActivity;
 import com.jun.viewdemo.activity.PieChartActivity;
 import com.jun.viewdemo.activity.RingActivity;
 import com.jun.viewdemo.databinding.ActivityMainBinding;
@@ -27,8 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.btnPieChart.setOnClickListener(this);
         binding.btnAvatar.setOnClickListener(this);
         binding.btnRing.setOnClickListener(this);
-
-        Drawable.
+        binding.btnImgCrash.setOnClickListener(this);
     }
 
     @Override
@@ -45,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_ring:
                 moveTo(RingActivity.class);
+                break;
+            case R.id.btn_img_crash:
+                moveTo(ImageCrashActivity.class);
                 break;
         }
 

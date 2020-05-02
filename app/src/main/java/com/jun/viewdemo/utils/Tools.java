@@ -22,4 +22,12 @@ public class Tools {
         return (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dp,Resources.getSystem().getDisplayMetrics());
     }
 
+
+    public static int rangInt(int i, int j) {
+        int max = Math.max(i, j);
+        int min = Math.min(i, j) - 1;
+        //在0到(max - min)范围内变化，取大于x的最小整数 再随机
+        return (int) (min + Math.ceil(Math.random() * (max - min)));
+    }
+
 }

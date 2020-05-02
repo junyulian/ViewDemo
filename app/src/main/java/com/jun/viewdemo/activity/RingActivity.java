@@ -7,11 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.jun.viewdemo.R;
 
-public class RingActivity extends AppCompatActivity {
+public class RingActivity extends BaseActivity {
+
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ring);
+    public int getViewId() {
+        return R.layout.activity_ring;
     }
 }
