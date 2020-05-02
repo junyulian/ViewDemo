@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btn_dash_board"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="仪表盘"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:id="@+id/btn_pie_chart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="饼图"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_dash_board"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:id="@+id/btn_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图像"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_pie_chart"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:id="@+id/btn_ring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="进度条"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_avatar"
+            android:layout_marginTop="30dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
