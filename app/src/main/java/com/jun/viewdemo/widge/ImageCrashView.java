@@ -22,7 +22,6 @@ import java.util.List;
 
 public class ImageCrashView extends View {
 
-    private boolean hasTouch = false;
     private static final int CRASH_RADIUS = 2;//ball的直径
     private Paint paint;
     private Bitmap bitmap;
@@ -40,10 +39,6 @@ public class ImageCrashView extends View {
     private void init() {
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.tsy01);
-
-        Bitmap.Config config = bitmap.getConfig();
-        copyBitmap = Bitmap.createBitmap(bitmap.getWidth()*3,bitmap.getHeight()*3,config);
-
 
         for(int i=0; i<bitmap.getWidth(); i++){
             for(int j=0; j<bitmap.getHeight(); j++){
@@ -98,9 +93,6 @@ public class ImageCrashView extends View {
             paint.setColor(ball.color);
             canvas.drawCircle(ball.x,ball.y,ball.r,paint);
         }
-        if(!hasTouch){
-            //canvas.drawBitmap(copyBitmap,getMatrix(),paint);
-        }
 
     }
 
@@ -108,7 +100,6 @@ public class ImageCrashView extends View {
     public boolean onTouchEvent(MotionEvent event) {
 
         if(event.getAction() == MotionEvent.ACTION_DOWN){
-            hasTouch = true;
             valueAnimator.start();
         }
 
