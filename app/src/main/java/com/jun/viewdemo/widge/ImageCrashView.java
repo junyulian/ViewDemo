@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -28,7 +29,7 @@ public class ImageCrashView extends View {
 
     private ValueAnimator valueAnimator;
     private List<Ball> mBalls = new ArrayList<>();
-    private Bitmap copyBitmap;
+    private Matrix matrix;
 
 
     public ImageCrashView(Context context, @Nullable AttributeSet attrs) {
@@ -40,6 +41,10 @@ public class ImageCrashView extends View {
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.tsy01);
 
+        matrix = new Matrix();
+        matrix.setScale(2.0f,2.0f);
+
+
         for(int i=0; i<bitmap.getWidth(); i++){
             for(int j=0; j<bitmap.getHeight(); j++){
                 Ball ball = new Ball();
@@ -50,10 +55,10 @@ public class ImageCrashView extends View {
 
                 //速度
                 ball.vx = (float)(Math.pow(-1,Math.ceil(Math.random()*1000))*20*Math.random());//(-20~20)
-                ball.vy = Tools.rangInt(-15,35);
+                ball.vy = Tools.rangInt(-10,10);
                 //加速度
-                ball.ax = 0;
-                ball.ay = 0.98f;
+                ball.ax = 0.63f;
+                ball.ay = 0.28f;
 
                 mBalls.add(ball);
             }
@@ -84,6 +89,7 @@ public class ImageCrashView extends View {
         }
     }
 
+    private boolean hasTouched = false;
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -94,12 +100,19 @@ public class ImageCrashView extends View {
             canvas.drawCircle(ball.x,ball.y,ball.r,paint);
         }
 
+        if(!hasTouched){
+
+            canvas.drawBitmap(bitmap,matrix,paint);
+        }
+
+
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
         if(event.getAction() == MotionEvent.ACTION_DOWN){
+            hasTouched = true;
             valueAnimator.start();
         }
 
