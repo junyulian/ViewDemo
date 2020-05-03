@@ -21,6 +21,7 @@
         <activity android:name=".activity.AvatarActivity"/>
         <activity android:name=".activity.RingActivity"/>
         <activity android:name=".activity.ImageCrashActivity"/>
+        <activity android:name=".activity.SplashActivity"/>
     </application>
 
 </manifest>

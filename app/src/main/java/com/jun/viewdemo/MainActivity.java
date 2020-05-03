@@ -14,6 +14,7 @@ import com.jun.viewdemo.activity.DashBoardActivity;
 import com.jun.viewdemo.activity.ImageCrashActivity;
 import com.jun.viewdemo.activity.PieChartActivity;
 import com.jun.viewdemo.activity.RingActivity;
+import com.jun.viewdemo.activity.SplashActivity;
 import com.jun.viewdemo.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.btnAvatar.setOnClickListener(this);
         binding.btnRing.setOnClickListener(this);
         binding.btnImgCrash.setOnClickListener(this);
+        binding.btnSplash.setOnClickListener(this);
     }
 
     @Override
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_img_crash:
                 moveTo(ImageCrashActivity.class);
+                break;
+            case R.id.btn_splash:
+                moveTo(SplashActivity.class);
                 break;
         }
 
