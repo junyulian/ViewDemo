@@ -10,12 +10,14 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.jun.viewdemo.activity.AvatarActivity;
+import com.jun.viewdemo.activity.BubbleActivity;
 import com.jun.viewdemo.activity.DashBoardActivity;
 import com.jun.viewdemo.activity.ImageCrashActivity;
 import com.jun.viewdemo.activity.PieChartActivity;
 import com.jun.viewdemo.activity.RingActivity;
 import com.jun.viewdemo.activity.SplashActivity;
 import com.jun.viewdemo.databinding.ActivityMainBinding;
+import com.jun.viewdemo.widge.MapBubbleTextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.btnRing.setOnClickListener(this);
         binding.btnImgCrash.setOnClickListener(this);
         binding.btnSplash.setOnClickListener(this);
+        binding.btnBubble.setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_splash:
                 moveTo(SplashActivity.class);
+                break;
+            case R.id.btn_bubble:
+                moveTo(BubbleActivity.class);
                 break;
         }
 

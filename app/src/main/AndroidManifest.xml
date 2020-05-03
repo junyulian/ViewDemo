@@ -22,6 +22,7 @@
         <activity android:name=".activity.RingActivity"/>
         <activity android:name=".activity.ImageCrashActivity"/>
         <activity android:name=".activity.SplashActivity"/>
+        <activity android:name=".activity.BubbleActivity"/>
     </application>
 
 </manifest>
